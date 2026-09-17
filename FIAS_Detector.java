@@ -343,8 +343,7 @@ private void showAboutDialog() {
     JOptionPane.showMessageDialog(this, aboutText, "О программе", JOptionPane.INFORMATION_MESSAGE);
 }
 
-private ImageIcon createIcon() {
-    // Создаем простую иконку программно
+private ImageIcon createIcon() {    
     java.awt.Image image = new java.awt.image.BufferedImage(32, 32, java.awt.image.BufferedImage.TYPE_INT_ARGB);
     Graphics2D g2d = (Graphics2D) image.getGraphics();
     g2d.setColor(new Color(0, 82, 155));
