@@ -144,39 +144,6 @@ DaData - API подсказок по адресам и ФИАС
 
 
 
-## 🚀 Установка
-
-```bash
-sudo apt install default-jdk
-git clone https://github.com/ваш-логин/fias-detector.git
-cd fias-detector
-javac AddressValidator.java
-```
-
-## 🔑 Настройка токена
-
-```bash
-export DADATA_TOKEN="ваш_ключ_из_личного_кабинета"
-```
-
-В коде токен читается так:
-
-```java
-private static final String TOKEN = System.getenv("DADATA_TOKEN");
-```
-
-> [!WARNING]
-> Не коммитьте реальный ключ в репозиторий.
-
-## ▶️ Запуск
-
-```bash
-java AddressValidator
-```
-
-Ожидаемый вывод при ошибке авторизации:
-
-```console
 $ java AddressValidator
 Ошибка запроса: 401
 Проверьте подключение к интернету и API ключ
