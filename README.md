@@ -30,7 +30,9 @@ API-ключ DaData	обязателен, см. ниже
 
 Бесплатный тариф: ~10 000 запросов в сутки.
 
+```
 ⚠️ Не публикуйте ключ в открытых репозиториях. Храните его в переменной окружения.
+```
 
 🚀 Установка и запуск
 1. Установите JDK
@@ -38,36 +40,44 @@ API-ключ DaData	обязателен, см. ниже
 # Ubuntu / Debian / Mint
 sudo apt install default-jdk
 ```
+```bash
 # Fedora
 sudo dnf install java-17-openjdk-devel
-
+```
+```bash
 # Arch
 sudo pacman -S jdk-openjdk
+```
 Проверка:
 
-bash
+```bash
 java -version   # должно быть 11+
+```
 2. Скачайте и скомпилируйте
-bash
+```bash
 git clone https://github.com/ваш-логин/fias-detector.git
 cd fias-detector
 javac AddressValidator.java
+```
 3. Передайте токен
 Рекомендуемый способ - переменная окружения:
 
-bash
+```bash
 export DADATA_TOKEN="ваш_ключ_из_личного_кабинета"
+```
 В коде это читается так:
 
-java
+```java
 private static final String TOKEN = System.getenv("DADATA_TOKEN");
 private static final String API_URL =
     "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address";
+```
 Альтернатива (менее безопасно): вписать ключ прямо в константу TOKEN.
 
 4. Запустите
-bash
+```bash
 java AddressValidator
+```
 💻 Использование
 🏠 Введите адрес в верхнее поле (например: Москва, Красная площадь, 1).
 
@@ -105,12 +115,24 @@ JSON парсится вручную (без библиотеки), поэтом
 
 🐞 Решение проблем
 Симптом	Что делать
+```
 error: <identifier> expected	Проверьте строки import javax.swing.*; и import java.awt.*; — должны быть со звёздочкой
+```
+```
 HeadlessException	Нет графической среды. Установите X-сервер или используйте ssh -X
+```
+```
 Окно не открывается	echo $DISPLAY должен быть не пуст
+```
+```
 401 Unauthorized	Неверный/просроченный API-ключ
+```
+```
 403 / 429	Превышен лимит запросов DaData
+```
+```
 UnknownHostException	Нет интернета или блокировка suggestions.dadata.ru
+```
 📄 Лицензия
 MIT — используйте свободно.
 
