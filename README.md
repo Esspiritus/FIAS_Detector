@@ -34,10 +34,10 @@ API-ключ DaData	обязателен, см. ниже
 
 🚀 Установка и запуск
 1. Установите JDK
-bash
+```bash
 # Ubuntu / Debian / Mint
 sudo apt install default-jdk
-
+```
 # Fedora
 sudo dnf install java-17-openjdk-devel
 
